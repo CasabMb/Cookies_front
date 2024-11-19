@@ -1,0 +1,24 @@
+#best-seller{
+    text-align: center;
+    margin: 8% 0;
+}
+.best_seller {
+    display: flex;
+    gap: 10%;
+    justify-content: center;
+}
+.cookies_card {
+    padding: 10px;
+    border-radius: 8px;
+}
+
+
+@media (max-width: 768px) {
+    .best_seller {
+        /* flex-direction: column; */
+        align-items: center;
+        flex-wrap: wrap;
+        transform: translateX(-2%);
+    }
+    
+}

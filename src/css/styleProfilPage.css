@@ -1,0 +1,203 @@
+/* ~~~~~~~~~~~~~~~~~~~~ Profil ~~~~~~~~~~~~~~~~~~~~ */
+#profil{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5% 0;
+}
+
+#section_redirect{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 50px;
+  gap: 40px;
+  justify-content: center; /* Center items in the middle */
+  margin: auto;
+
+}
+
+.profil_redirect {
+  display: flex;
+  gap: 15px;
+  padding: 15px 5px 0 5px;
+  border: 1px solid var(--secondary-color-400);
+  border-radius: 10px;
+  transition: all 200ms linear;
+  box-sizing: border-box; /* Ensures padding and border are included in the width */
+}
+
+.profil_redirect img{
+  width: 25px;
+}
+
+.profil_redirect span{
+  cursor: pointer;
+}
+
+.profil_redirect:hover {
+  cursor: pointer;
+  background-color: var(--secondary-color-400);
+}
+
+  
+/* __________ page Profil QUERI __________ */
+@media (max-width: 500px){
+  #section_redirect {
+    display: flex;
+  }
+
+}
+@media (max-width: 768px){
+  #profil{
+    text-align: center;
+  }
+  .profil_p{
+    width: 80%;
+  }
+  #section_redirect{
+    flex-direction: column;
+    display: flex;
+    gap: 20px;
+  }
+  .profil_redirect{
+    width: 100%;
+  }
+}
+@media (min-width: 800px){
+  #section_redirect {
+    padding-left: 0;
+    margin-top: 3%;
+  }
+  .profil_bag img{
+    width: 25px;
+    height: 30px;
+  }
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~ Mes infos personnelles ~~~~~~~~~~~~~~~~~~~~ */
+#infos{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5% 0 ;
+}
+#formulaire_profil{
+  display: flex;
+  margin-bottom: 70px;
+}
+#formulaire_profil input{
+  padding-top: 5%;
+  padding-bottom: 5%;
+  padding-left: 10px;
+  width: 500px;
+  max-width: 100%;
+  height: 40px;
+  background-color:var(--secondary-color-200-transparent);
+  border: none;
+  padding: 13px 20px;
+  box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);
+}
+#formulaire_profil input:focus,
+#formulaire_profil input:active {
+  border: none;
+  outline: none;
+  box-shadow: 0 4px 8px 0 var(--secondary-color-400);
+}
+#formulaire_profil input[type=submit]{
+  padding-top: 0;
+  padding: 5px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: all 200ms linear;
+  padding: 0 15px;
+  letter-spacing: 1px;
+  margin: auto;
+  border: none;
+  background-color: var(--secondary-color-400);
+  color: var(--text-color);
+  box-shadow: 0 8px 24px 0 rgba(68, 53, 4, 0.322);
+}
+#formulaire_profil input[type=submit]:active,
+#formulaire_profil input[type=submit]:focus{  
+  background-color: var(--secondary-color-600);
+  color: var(--text-color-light);
+  box-shadow: 0 8px 24px 0 rgba(68, 53, 4, 0.322);
+}
+#formulaire_profil input[type=submit]:hover{  
+  background-color: var(--secondary-color-600);
+  color: var(--text-color-light);
+  box-shadow: 0 8px 24px 0 rgba(68, 53, 4, 0.322);
+}
+#cookies_img_infosUpdate{
+  position: relative; /* Conteneur des images */
+  width: 100%;
+  height: 100%; /* Permet de garder la taille dynamique */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#cookie_infosUpdate1{
+  width: 100px; /* Largeur en fonction de la largeur du viewport */
+  position: absolute;
+  left: -80%; /* Positionnement horizontal dynamique */
+  transform: translateY(720%);
+  z-index: -1;
+  filter: blur(1px);
+} 
+
+#cookie_infosUpdate2{
+  width: 200px; /* Largeur en fonction de la largeur du viewport */
+  position: absolute;
+  left: -50%; /* Positionnement horizontal dynamique */
+  transform: translateY(350%);
+}
+
+/* __________ infos personnelles QUERI __________ */
+@media (max-width: 499px){
+  #info{
+    justify-content: center;
+  }
+  #infos h1{
+    font-size: x-large;
+  }
+  #infos p{
+    text-align: center;
+    margin-top: 5px;
+  }
+
+  #infos_content {
+    width: 60%;
+  }
+  #formulaire_profil input,
+  #formulaire_profil input[type=submit]{
+    width: 200px;
+  }
+  #formulaire_profil{
+    transform: translateX(-15%);
+  }
+}
+@media (max-width: 768px){
+  #infos_content {
+    width: 70%;
+    padding-bottom: 10px;
+  }
+  #cookies_img_infosUpdate{
+    display: none;
+  }
+  #formulaire_profil input,
+  #formulaire_profil input[type=submit]{
+    width: 350px;
+    transform: translateX(1%);
+  }
+}
+@media (min-width: 1000px){
+  #formulaire_profil{
+    transform: translateX(10%);
+  }
+}
+
+
+
+

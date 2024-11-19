@@ -1,0 +1,217 @@
+/* src/components/stylePanier.css */
+
+.panier-container {
+    padding: 50px;
+    background-color: var(--secondary-color-200);
+    width: 70%;
+    margin: auto;
+    margin-bottom: 60px;
+}
+.panier-header{
+    text-align: center;
+    margin-top: 60px;
+}
+.panier-empty{
+    text-align: center;
+}
+
+.panier-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.panier-item {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: var(--secondary-color-100);
+    border-radius: 5px;
+}
+
+.panier-item img {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+.panier-item-details {
+    flex-grow: 1;
+}
+
+.panier-item-title {
+    font-size: 18px;
+    margin: 0;
+    text-wrap: pretty;
+}
+
+.panier-item-price {
+    font-size: 16px;
+    color: #666;
+}
+
+.panier-quantity-controls {
+    display: flex;
+    align-items: center;
+}
+
+
+.panier-quantity-controls button {
+    border: 1px solid var(--secondary-color-600);
+    background-color: var(--secondary-color-200);
+    border-radius: 50%;
+    cursor: pointer;
+    width: 30px; /* Assurez-vous que la largeur et la hauteur sont égales */
+    height: 30px; /* Hauteur égale à la largeur pour obtenir un cercle parfait */
+    display: flex; /* Centrer le contenu à l'intérieur du bouton */
+    align-items: center;
+    justify-content: center;
+    font-size: 16px; /* Ajuster la taille de la police pour l'adapter */
+    padding: 0; /* Supprimer les marges internes pour un cercle parfait */
+}
+
+.panier-quantity-controls button:first-child {
+    font-size: 17px;
+}
+
+.panier-quantity-controls button:last-child {
+    font-size: 16px;
+}
+
+.panier-quantity-controls button:hover {
+    background-color: var(--secondary-color-600);
+}
+
+.panier-quantity-controls span {
+    margin: 0 10px;
+    font-size: 16px;
+}
+
+.panier-item-remove {
+    margin-left: 20px;
+    background-color: #ff4d4d;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.panier-item-remove:hover {
+    background-color: #e60000;
+}
+
+
+@media (max-width: 600px){
+    .panier-container{
+        width: 90%;
+        padding: 15px;
+    }
+    .panier-item-remove{
+        font-size: x-small;
+    }
+    .panier-item-title{
+        font-size: 12px;  
+    }
+    .panier-quantity-controls button {
+        width: 20px; 
+        height: 20px; 
+        font-size: 14px; 
+        /* transform: translateX(5px); */
+    }
+    .panier-quantity-controls button:first-child {
+        font-size: 14px;
+    }
+    .panier-quantity-controls button:last-child {
+        font-size: 14px;
+    }
+    .panier-item-title {
+        font-size: 16px;
+        margin: 0;
+        width: 70px; 
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+
+
+/** ___________________ Panier Ticket Component  ___________________**/
+.ticket{
+    display: flex;
+    flex-direction: column;
+}
+.panier_ticket{
+    background-color: var(--secondary-color-200);
+    width: 30%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-self: end;
+    margin-right: 5%;
+    padding: 30px;
+    border-radius: 10px;
+}
+.panier_ticket h4{
+    text-align: center;
+    font-size: xx-large;
+}
+.panier_radio{
+    display: flex;
+    gap: 5px;
+}
+.panier_radio input[type="radio"] {
+    accent-color: var(--secondary-color-600);
+}
+.panier_ticket_details {
+    padding: 5px 15px 10px 15px;
+    margin-top: 5px;
+    background-color: var(--secondary-color-100);
+    text-align: center;
+    border-radius: 5px;
+}
+.panier_ticket_details p {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+}
+.right-align {
+    margin-left: auto; 
+    text-align: right; 
+}
+.total-articles {
+    margin-left: 5px; 
+    margin-right: 5px; 
+}
+.bold{
+    font-weight: bold;
+}
+.panier_ticket_details input[type="submit"]{
+    background-color: var(--secondary-color-400);
+    border: none;
+    border-radius: 8px;
+    padding: 5px;
+
+    transition: all 200ms linear;
+}
+.panier_ticket_details input[type="submit"]:hover{
+    background-color: var(--secondary-color-600);
+    color: var(--text-color-light);
+    box-shadow: 0 8px 20px 0 var(--secondary-color-600);
+}
+
+@media (max-width: 600px){
+    .panier_ticket{
+        width: 70%;
+        margin: auto;
+        margin-bottom: 50px;
+    }
+    .panier_ticket_details {
+        padding: 5px 10px 10px 10px;
+    }
+    .panier_ticket{
+        padding: 20px;
+    }
+}
+
+
