@@ -3,12 +3,13 @@ import { usePanier } from '../Contexts/PanierContext';
 import '../css/stylePanier.css'; 
 import CommandeService from '../Services/CommandeService';
 import DetailsCommandeService from '../Services/DetailsCommandeService';
-import ClientService from '../Services/ClientService';  // Importez ClientService
+import ClientService from '../Services/ClientService';  
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import PanierService from '../Services/PanierService';
 
 function PanierTicketComponent() {
-    const { panier, viderPanier } = usePanier();
+    const { panier } = usePanier();
     const [deliveryMethod, setDeliveryMethod] = useState('standard');
     const navigate = useNavigate();
 
@@ -58,14 +59,17 @@ function PanierTicketComponent() {
                     throw error;  
                 });
             }));
-            viderPanier();
+            // Vider le panier via l'API
+            await PanierService.clearPanier(clientId);
+            // toast.success('Panier vidé avec succès.');
+            // Redirection
             navigate('/Paiement');
 
         } catch (error) {
             toast.error("Erreur lors de l'ajout de la commande");
         }
     };
-
+    
     return (
         <div className='ticket'>
             <div className="panier_ticket">

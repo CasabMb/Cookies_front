@@ -21,6 +21,7 @@ function HistoriqueCommande() {
             }
     
             const response = await CommandeService.fetchCommandesByClientId(clientId);
+            console.log('fetchCommandesByClientId response:', response.data);
             if (response.data && Array.isArray(response.data)) {
                 const commandesData = response.data;
     

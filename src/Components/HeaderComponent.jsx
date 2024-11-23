@@ -13,7 +13,7 @@ function HeaderComponent() {
     const [activeLink, setActiveLink] = useState('/');
     const navigate = useNavigate();
     const menuRef = useRef(null); // Référence pour le menu
-    // const { viderPanier } = usePanier(); // Ajoutez viderPanier ici
+    
 
 
     const navigateTo = (route) => {

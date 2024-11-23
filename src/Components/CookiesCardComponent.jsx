@@ -6,6 +6,7 @@ import { useFavoris } from '../Contexts/FavorisContext';
 import { usePanier } from '../Contexts/PanierContext';
 import { useEffect, useState } from 'react';
 import ClientService from '../Services/ClientService';
+import { toast } from 'react-toastify';
 
 const CookiesCardComponent = ({ produit }) => {
     const navigate = useNavigate();
@@ -39,7 +40,8 @@ const CookiesCardComponent = ({ produit }) => {
             if (produitDansPanier) {
                 augmenterQuantite(clientId, produit.produit_id);  
             } else {
-                ajouterAuPanier(clientId, produit.produit_id, 1);  
+                ajouterAuPanier(clientId, produit.produit_id, 1); 
+                toast.success("Dans le panier") ;
             }
         }
     };

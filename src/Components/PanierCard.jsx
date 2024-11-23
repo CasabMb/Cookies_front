@@ -3,6 +3,7 @@ import PanierContext from '../Contexts/PanierContext';
 import '../css/stylePanier.css';
 import PanierService from '../Services/PanierService';
 import ClientService from '../Services/ClientService';
+import AuthContext from '../Contexts/AuthContext';
 
 function PanierCard() {
     const { augmenterQuantite, diminuerQuantite, retirerDuPanier } = useContext(PanierContext);
@@ -10,6 +11,8 @@ function PanierCard() {
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
     const clientId = ClientService.getClientIdFromToken();
+
+    const { isAuthenticated } = useContext(AuthContext);
 
     const fetchPanier = async (clientId) => {
         try {
@@ -104,7 +107,11 @@ function PanierCard() {
             <h1 className="panier-header">Panier</h1>
             <div className="panier-container">
                 {panier.length === 0 ? (
-                    <p className="panier-empty">Votre panier est vide pour l'instant. Connectez-vous pour pouvoir ajouter des articles à votre panier</p>
+                    isAuthenticated ? (
+                        <p className="panier-empty">Votre panier est vide pour l'instant.</p>
+                    ) : (
+                        <p className="panier-empty">Votre panier est vide pour l'instant. Connectez-vous pour pouvoir ajouter des articles à votre panier</p>
+                    )
                 ) : (
                     <ul className="panier-list">
                         {panier.map((produit) => (

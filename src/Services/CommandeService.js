@@ -1,24 +1,26 @@
 //src/Services/CommandeService.js
 import axios from "axios";
+import URL from "../config";
 
 
 class CommandeService{
-    static fetchCommandes(){
-        return axios.get('http://127.0.0.1:3001/commandes');
+    static fetchCommandes() {
+        return axios.get(`${URL}/commandes`);
     }
 
-    static fetchCommandesById(id){
-        return axios.get('http://127.0.0.1:3001/commandes/'+id);
+    static fetchCommandesById(id) {
+        return axios.get(`${URL}/commandes/${id}`);
     }
+
     static fetchCommandesByClientId(clientId) {
-        return axios.get(`http://127.0.0.1:3001/commandes/client/${clientId}`);
+        return axios.get(`${URL}/commandes/client/${clientId}`);
     }
 
-    static addCommande(commande){
-        return axios.post('http://127.0.0.1:3001/commandes', commande)
+    static addCommande(commande) {
+        return axios.post(`${URL}/commandes`, commande);
     }
-    static updateCommande(id, commande){
-        return axios.post('http://127.0.0.1:3001/commandes/'+id, commande)
+    static updateCommande(id, commande) {
+        return axios.put(`${URL}/commandes/${id}`, commande);
     }
     
 

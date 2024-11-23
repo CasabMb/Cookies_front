@@ -22,7 +22,11 @@ class PanierService {
     // Update de la quantité
     static updateQuantite(client_id, produit_id, quantite) {
         return axios.put(`${URL}/paniers/${client_id}/${produit_id}`, {quantite});
-            }
+    }
+
+    static clearPanier(clientId){
+        return axios.delete(`${URL}/paniers/${clientId}`)
+    }
 }
 
 export default PanierService;

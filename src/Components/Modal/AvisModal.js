@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import '../../css/styleAvis.css';
 import ClientService from '../../Services/ClientService';
 import CommentaireService from '../../Services/CommentaireService';
+import { toast } from 'react-toastify';
 
 export default function AvisModal({ commandeId }) {
     const [modal, setModal] = useState(false);
@@ -46,8 +47,8 @@ export default function AvisModal({ commandeId }) {
 
         try {
             await CommentaireService.addCommentaire(newCommentaire);
-            alert("Commentaire ajouté avec succès");
-            toggleModal(); // Fermer le modal après la soumission
+            toast.success("Commentaire ajouté avec succès");
+            toggleModal(); 
         } catch (error) {
             console.error("Erreur lors de l'ajout du commentaire:", error);
         }
